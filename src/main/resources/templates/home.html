@@ -4,17 +4,72 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Home</title>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body {
+            background-color: #f1f5f8;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            margin-bottom: 30px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .card-body {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .lead {
+            font-size: 18px;
+            color: #495057;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            font-size: 16px;
+            border-radius: 25px;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to the Home Page!</h1>
-    <p>You have successfully logged in.</p>
-    <p><strong>User:</strong> <span th:text="${user}"></span></p>
-    <p><strong>Profile Link:</strong> <a th:href="${profileLink}">Access Profile</a></p>
-    <p><strong>Repositories:</strong> <span th:text="${repos}"></span></p>
-    <a href="/logout" class="btn btn-danger">Logout</a>
+    <div class="card">
+        <div class="card-header">
+            Welcome to the Home Page!
+        </div>
+        <div class="card-body">
+            <p class="lead">You have successfully logged in.</p>
+            <p><strong>User:</strong> <span th:text="${user}"></span></p>
+            <p><strong>Profile Link:</strong> <a th:href="${profileLink}" class="btn btn-primary btn-sm">Access Profile</a></p>
+            <p><strong>Repositories:</strong> <span th:text="${repos}"></span></p>
+            <div class="text-center">
+                <a href="/logout" class="btn btn-danger btn-lg">Logout</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
